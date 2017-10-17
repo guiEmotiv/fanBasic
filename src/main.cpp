@@ -1,6 +1,6 @@
 #include <Arduino.h>
-
-int pinesPWM[6] = {11, 10, 9, 6, 5, 3};
+#define size 6
+int pinesPWM[size] = {11, 10, 9, 6, 5, 3};
 float mapValues;
 int pinAnalog = 0;
 int baudrate = 9600;
@@ -17,13 +17,13 @@ void loop() {
     /* analog value of 10 bits (0 to 1023) */
     /* digital value of 8 bits (0 to 255) */
     mapValues = map(potValues, 0, 1023, 0, 255);
-    for (int i = 0; i < sizeof(pinesPWM); i++) {
+    for (int i = 0; i < size; i++) {
       /* code */
       analogWrite(pinesPWM[i], mapValues);
 
       Serial.print("pines de senal PWM: ");
       Serial.print(pinesPWM[i]);
-      Serial.print("valor rango 0 - 255 (0V - 5V): ");
+      Serial.print("    valor rango 0 - 255 (0V - 5V): ");
       Serial.println(mapValues);
     }
 }
