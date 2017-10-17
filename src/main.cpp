@@ -20,9 +20,10 @@ void loop() {
     for (int i = 0; i < sizeof(pinesPWM); i++) {
       /* code */
       analogWrite(pinesPWM[i], mapValues);
-      Serial.println("pines de senal PWM: ");
-      Serial.print(pinesPWM[i]);
-      Serial.println("valor rango 0 - 255 (0V - 5V): ");
-      Serial.print(mapValues);
+
+      Serial.print("pines de senal PWM: ");
+      Serial.println(pinesPWM[i]);
+      Serial.print("valor rango 0 - 255 (0V - 5V): ");
+      Serial.println(mapValues);
     }
 }
