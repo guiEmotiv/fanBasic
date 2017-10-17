@@ -22,7 +22,7 @@ void loop() {
       analogWrite(pinesPWM[i], mapValues);
 
       Serial.print("pines de senal PWM: ");
-      Serial.println(pinesPWM[i]);
+      Serial.print(pinesPWM[i]);
       Serial.print("valor rango 0 - 255 (0V - 5V): ");
       Serial.println(mapValues);
     }
